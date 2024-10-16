@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Данные о пользователе</title>
+    <!-- Подключение Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Данные о пользователе</h1>
+        <form method="post" action="/">
+            <div class="form-group">
+                <label for="name">Имя пользователя:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="city">Город:</label>
+                <input type="text" class="form-control" id="city" name="city" required>
+            </div>
+            <div class="form-group">
+                <label for="hobbi">Хобби:</label>
+                <input type="text" class="form-control" id="hobbi" name="hobbi" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Возраст:</label>
+                <input type="text" class="form-control" id="age" name="age" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить анкету</button>
+        </form>
+        <hr class="my-4">
+        <h2 class="mb-4">Пользователи</h2>
+        {% for user in users %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h4 class="card-title">{{ user.name }}</h4>
+                <p class="card-text">{{ user.city }}</p>
+                <p class="card-text">{{ user.hobbi }}</p>
+                <p class="card-text">{{ user.age }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Подключение Bootstrap JS и зависимости -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
